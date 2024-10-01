@@ -15,4 +15,54 @@
         android:title="@string/article_title"
         android:navigationIcon="@drawable/arrow_back" />
 
+    <ScrollView
+        android:id="@+id/secondScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/TextAppearance.M3.Sys.Typescale.TitleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Игрок «Крыльев» Костанца объяснил, чего не хватило для победы в матче с «Химками»" />
+
+            <TextView
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Бразильский футболист «Крыльев Советов» Фернандо Костанца прокомментировал ничейный результат в матче 10-го тура Российской Премьер-Лиги с «Химками». Встреча прошла сегодня в Самаре. Она закончилась со счётом 0:0." />
+
+            <ImageView
+                android:id="@+id/photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                tools:src="@drawable/ic_launcher_background"/>
+
+            <TextView
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="«Мы не забили. Вот, что случилось сегодня. Думаю, мы провели хороший матч. Старались что-то создать, контролировали мяч. Возможно, последний пас и удары были не самыми лучшими», — сказал Костанца в беседе с корреспондентом «Чемпионата» Ильёй Никульниковым." />
+
+            <Switch
+                android:id="@+id/switchRead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Прочитано" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </LinearLayout>

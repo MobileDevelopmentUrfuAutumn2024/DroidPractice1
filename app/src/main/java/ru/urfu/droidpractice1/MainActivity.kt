@@ -33,6 +33,37 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    override fun onStart() {
+        Log.d("Main_Activity", "onStart")
+        super.onStart()
+    }
+
+    override fun onResume() {
+        Log.d("Main_Activity", "onResume")
+        super.onResume()
+    }
+
+    override fun onPause() {
+        Log.d("Main_Activity", "onPause")
+        super.onPause()
+    }
+
+    override fun onRestart() {
+        Log.d("Main_Activity", "onRestart")
+        super.onRestart()
+    }
+
+    override fun onStop() {
+        Log.d("Main_Activity", "onStop")
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        /* У нас на прошлой паре придумано предположение, что этот метод не вызовиться */
+        Log.d("Main_Activity", "onDestroy")
+        super.onDestroy()
+    }
+
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putInt("count", countLike)
@@ -56,6 +87,7 @@ class MainActivity : ComponentActivity() {
 
     private fun onToOtherScreenClicked() {
         val intent = Intent(this, SecondActivity::class.java)
+            .apply { putExtra("read", read) }
         resultLauncher.launch(intent)
     }
 

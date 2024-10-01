@@ -32,7 +32,8 @@ class SecondActivity : ComponentActivity() {
                 .load("https://n1s1.hsmedia.ru/36/6a/82/366a826bdafd6348f8f15fbfaa6024c8/656x438_1:5523_d56bb1fd264484cd4db894f82c9f60e1@3008x2008_0xVcnir67y_8864381406318415952.jpg.webp")
                 .into(photo)
 
-            switchRead.setChecked(checked)
+            checked = intent.getBooleanExtra("read", false)
+            switchRead.isChecked = checked
             switchRead.setOnCheckedChangeListener { _, isChecked -> checked = isChecked }
         }
 
@@ -40,6 +41,37 @@ class SecondActivity : ComponentActivity() {
             setResult(RESULT_OK, Intent().apply { putExtra(KEY_READ, checked) })
             finish()
         }
+    }
+
+    override fun onStart() {
+        Log.d("Second_Activity", "onStart")
+        super.onStart()
+    }
+
+    override fun onResume() {
+        Log.d("Second_Activity", "onResume")
+        super.onResume()
+    }
+
+    override fun onPause() {
+        Log.d("Second_Activity", "onPause")
+        super.onPause()
+    }
+
+    override fun onRestart() {
+        Log.d("Second_Activity", "onRestart")
+        super.onRestart()
+    }
+
+    override fun onStop() {
+        Log.d("Second_Activity", "onStop")
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        /* У нас на прошлой паре придумано предположение, что этот метод не вызовиться */
+        Log.d("Second_Activity", "onDestroy")
+        super.onDestroy()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

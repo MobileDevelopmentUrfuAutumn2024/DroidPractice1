@@ -31,6 +31,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import ru.urfu.droidpractice1.Feedback
 import ru.urfu.droidpractice1.R
 import ru.urfu.droidpractice1.ui.theme.DroidPractice1Theme
 import ru.urfu.droidpractice1.ui.theme.Typography
@@ -40,8 +41,7 @@ fun MainActivityScreen(
     onToOtherScreen: () -> Unit = {},
     isRead: Boolean = true,
     onShareClick: () -> Unit = {},
-    likes: Int = 0,
-    dislikes: Int = 0,
+    feedback: Feedback = Feedback(0, 0),
     onLikeClick: () -> Unit = {},
     onDislikeClick: () -> Unit = {}
 ) {
@@ -70,7 +70,7 @@ fun MainActivityScreen(
                     .verticalScroll(rememberScrollState())
             ) {
                 Text(text = stringResource(R.string.s1_title), style = Typography.titleLarge)
-                Feedback(likes, dislikes, onLikeClick, onDislikeClick)
+                Feedback(feedback.likes, feedback.dislikes, onLikeClick, onDislikeClick)
                 Text(
                     text = stringResource(R.string.s1_1), modifier = Modifier.padding(top = 16.dp)
                 )

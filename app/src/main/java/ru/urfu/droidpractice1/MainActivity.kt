@@ -16,8 +16,7 @@ import ru.urfu.droidpractice1.content.MainActivityScreen
 
 class MainActivity : ComponentActivity() {
     private var read: Boolean by mutableStateOf(false)
-    private var likes: Int by mutableIntStateOf(0)
-    private var dislikes: Int by mutableIntStateOf(0)
+    private var feedback: Feedback by mutableStateOf(Feedback(0, 0))
 
 
 
@@ -25,12 +24,13 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         savedInstanceState?.apply {
             read = getBoolean(READ_KEY, read)
-            likes = getInt(LIKES_KEY, likes)
-            dislikes = getInt(DISLIKES_KEY, dislikes)
+            val likes = getInt(LIKES_KEY, feedback.likes)
+            val dislikes = getInt(DISLIKES_KEY, feedback.dislikes)
+            feedback = Feedback(likes, dislikes)
         }
         Log.i(LOG_TAG, "${this::class.java.name} : onCreate")
         setContent {
-            MainActivityScreen(::onToOtherScreen, read, ::onShareClick, likes, dislikes, ::onLikeClick, ::onDislikeClick)
+            MainActivityScreen(::onToOtherScreen, read, ::onShareClick, feedback, ::onLikeClick, ::onDislikeClick)
         }
     }
 
@@ -53,23 +53,22 @@ class MainActivity : ComponentActivity() {
             putExtra(Intent.EXTRA_TEXT, getString(R.string.s1_1))
             startActivity(Intent.createChooser(this, "Поделиться"))
         }
-
     }
 
     private fun onLikeClick(){
-        likes += 1
+        feedback = feedback.copy(likes = feedback.likes + 1)
     }
 
     private fun onDislikeClick(){
-        dislikes += 1
+        feedback = feedback.copy(dislikes = feedback.dislikes + 1)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.apply {
             putBoolean(READ_KEY, read)
-            putInt(LIKES_KEY, likes)
-            putInt(DISLIKES_KEY, dislikes)
+            putInt(LIKES_KEY, feedback.likes)
+            putInt(DISLIKES_KEY, feedback.dislikes)
         }
     }
 

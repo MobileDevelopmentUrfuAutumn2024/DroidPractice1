@@ -1,7 +1,5 @@
 package ru.urfu.droidpractice1
 
-import androidx.activity.ComponentActivity
-
 /**
  * @author Lapoushko
  * Кнопки главного экрана
@@ -16,4 +14,14 @@ interface MainScreenHandler {
      * Клик для отправки статьи
      */
     fun onToShareClick()
+
+    /**
+     * Лайкнуть статью
+     */
+    fun onClickLike()
+
+    /**
+     * Дизлайкнуть статью
+     */
+    fun onClickDislike()
 }

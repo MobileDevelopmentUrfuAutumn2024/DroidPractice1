@@ -4,6 +4,7 @@ package ru.urfu.droidpractice1.content
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -41,7 +42,9 @@ import ru.urfu.droidpractice1.ui.theme.Typography
 @Composable
 fun MainActivityScreen(
     handler: MainScreenHandler,
-    read: Boolean = false
+    read: Boolean = false,
+    likes: Int,
+    dislikes: Int
 ) {
     val article = Article.articles[0]
     val texts: List<String> = article.getFragments()
@@ -79,6 +82,40 @@ fun MainActivityScreen(
                     style = Typography.titleLarge,
                     fontStyle = FontStyle.Italic
                 )
+
+                Row(
+                    modifier = Modifier
+                        .padding(bottom = 10.dp)
+                ) {
+                    Row {
+                        Icon(
+                            modifier = Modifier
+                                .clickable { handler.onClickLike() }
+                                .padding(start = 10.dp),
+                            painter = painterResource(id = R.drawable.like),
+                            contentDescription = null
+                        )
+                        Text(
+                            modifier = Modifier
+                                .padding(start = 10.dp),
+                            text = likes.toString()
+                        )
+                    }
+                    Row {
+                        Icon(
+                            modifier = Modifier
+                                .clickable { handler.onClickDislike() }
+                                .padding(start = 10.dp),
+                            painter = painterResource(id = R.drawable.dislike),
+                            contentDescription = null
+                        )
+                        Text(
+                            modifier = Modifier
+                                .padding(start = 10.dp),
+                            text = dislikes.toString()
+                        )
+                    }
+                }
 
                 Text(
                     modifier = Modifier
@@ -138,5 +175,12 @@ fun MainScreenPreview() {
         override fun onToShareClick() {
         }
 
-    })
+        override fun onClickLike() {
+            TODO("Not yet implemented")
+        }
+
+        override fun onClickDislike() {
+            TODO("Not yet implemented")
+        }
+    }, false, 0, 0)
 }

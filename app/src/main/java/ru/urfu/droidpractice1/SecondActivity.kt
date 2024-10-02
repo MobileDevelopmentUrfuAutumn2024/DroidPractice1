@@ -27,13 +27,14 @@ class SecondActivity : ComponentActivity() {
         Log.e(MainActivity.LIFECYCLE_KEY, "SecondActivity onCreate")
     }
 
+    /**
+     * Установить UI для экрана
+     */
     private fun setUI(article: Article) {
         readed = intent.getBooleanExtra(READ_KEY, false)
-
         binding = ActivitySecondBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
         val texts = article.getFragments()
 
         binding.articleName.text = article.name

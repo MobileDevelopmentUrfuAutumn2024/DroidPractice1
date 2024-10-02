@@ -8,7 +8,9 @@ package ru.urfu.droidpractice1.data
  * @param path пути к картинкам статьи
  */
 class Article(
-    val name: String, val text: String, val path: List<String>
+    val name: String,
+    val text: String,
+    val path: List<String>
 ) {
     companion object {
         val articles = listOf(
@@ -26,6 +28,10 @@ class Article(
     }
 }
 
+/**
+ * Разделить текст по абзацам
+ * @return список абзацев
+ */
 fun Article.getFragments(): List<String> = this.text
     .split("\n")
     .filter { it != "" }

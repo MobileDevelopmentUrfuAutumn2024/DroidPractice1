@@ -32,6 +32,7 @@ import coil.compose.AsyncImage
 import ru.urfu.droidpractice1.MainScreenHandler
 import ru.urfu.droidpractice1.R
 import ru.urfu.droidpractice1.data.Article
+import ru.urfu.droidpractice1.data.Stats
 import ru.urfu.droidpractice1.data.getFragments
 import ru.urfu.droidpractice1.ui.theme.DroidPractice1Theme
 import ru.urfu.droidpractice1.ui.theme.Typography
@@ -43,8 +44,7 @@ import ru.urfu.droidpractice1.ui.theme.Typography
 fun MainActivityScreen(
     handler: MainScreenHandler,
     read: Boolean = false,
-    likes: Int,
-    dislikes: Int
+    stats: Stats = Stats(0,0)
 ) {
     val article = Article.articles[0]
     val texts: List<String> = article.getFragments()
@@ -98,7 +98,7 @@ fun MainActivityScreen(
                         Text(
                             modifier = Modifier
                                 .padding(start = 10.dp),
-                            text = likes.toString()
+                            text = stats.likes.toString()
                         )
                     }
                     Row {
@@ -112,7 +112,7 @@ fun MainActivityScreen(
                         Text(
                             modifier = Modifier
                                 .padding(start = 10.dp),
-                            text = dislikes.toString()
+                            text = stats.dislikes.toString()
                         )
                     }
                 }
@@ -163,7 +163,9 @@ fun MainActivityScreen(
     }
 }
 
-
+/**
+ * Превью MainActivityScreen
+ */
 @Preview(showBackground = true)
 @Composable
 fun MainScreenPreview() {
@@ -176,11 +178,9 @@ fun MainScreenPreview() {
         }
 
         override fun onClickLike() {
-            TODO("Not yet implemented")
         }
 
         override fun onClickDislike() {
-            TODO("Not yet implemented")
         }
-    }, false, 0, 0)
+    })
 }

@@ -13,7 +13,11 @@ import androidx.compose.runtime.setValue
 import ru.urfu.droidpractice1.SecondActivity.Companion.READ_KEY
 import ru.urfu.droidpractice1.content.MainActivityScreen
 import ru.urfu.droidpractice1.data.Article
+import ru.urfu.droidpractice1.data.Stats
 
+/**
+ * Основная активность
+ */
 class MainActivity : ComponentActivity(), MainScreenHandler {
 
     private var readed by mutableStateOf(false)
@@ -24,7 +28,7 @@ class MainActivity : ComponentActivity(), MainScreenHandler {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MainActivityScreen(this, read = readed, likes = likes, dislikes = dislikes)
+            MainActivityScreen(this, read = readed, stats = Stats(likes, dislikes))
         }
         Log.e(LIFECYCLE_KEY, "MainActivity onCreate")
     }

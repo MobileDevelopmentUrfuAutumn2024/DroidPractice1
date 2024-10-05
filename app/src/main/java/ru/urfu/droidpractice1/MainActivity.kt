@@ -20,7 +20,7 @@ import ru.urfu.droidpractice1.data.Stats
  */
 class MainActivity : ComponentActivity(), MainScreenHandler {
 
-    private var readed by mutableStateOf(false)
+    private var readed: Boolean by mutableStateOf(false)
 
     private var likes by mutableIntStateOf(0)
     private var dislikes by mutableIntStateOf(0)
@@ -49,24 +49,28 @@ class MainActivity : ComponentActivity(), MainScreenHandler {
     }
 
     override fun onClickLike() {
-        likes += 1
+        likes++
     }
 
     override fun onClickDislike() {
-        dislikes += 1
+        dislikes++
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putInt(LIKES_KEY, likes)
-        outState.putInt(DISLIKES_KEY, dislikes)
+        outState.apply {
+            putInt(LIKES_KEY, likes)
+            putInt(DISLIKES_KEY, dislikes)
+        }
         Log.e(LIFECYCLE_KEY, "MainActivity onSaveInstanceState")
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        likes = savedInstanceState.getInt(LIKES_KEY)
-        dislikes = savedInstanceState.getInt(DISLIKES_KEY)
+        with(savedInstanceState){
+            likes = getInt(LIKES_KEY)
+            dislikes = getInt(DISLIKES_KEY)
+        }
         Log.e(LIFECYCLE_KEY, "MainActivity onRestoreInstanceState")
     }
 

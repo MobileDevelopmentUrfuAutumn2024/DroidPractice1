@@ -42,8 +42,8 @@
                 android:id="@+id/text_start_second"
                 android:layout_width="match_parent"
                 android:text="@string/example_text"
-                android:textSize="16sp"
-                android:padding="8dp"
+                android:textSize="@dimen/size_text"
+                android:padding="@dimen/padding_text"
                 android:textColor="@color/black"
                 android:layout_height="wrap_content">
             </TextView>
@@ -61,8 +61,8 @@
                 android:id="@+id/text_end_second"
                 android:layout_width="match_parent"
                 android:text="@string/example_text"
-                android:textSize="16sp"
-                android:padding="8dp"
+                android:textSize="@dimen/size_text"
+                android:padding="@dimen/padding_text"
                 android:textColor="@color/black"
                 android:layout_height="wrap_content">
             </TextView>
@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/readed"
                 android:layout_marginTop="8dp"
-                android:textSize="16sp"
+                android:textSize="@dimen/size_text"
                 android:checked="false"
                 tools:ignore="UseSwitchCompatOrMaterialXml">
             </Switch>

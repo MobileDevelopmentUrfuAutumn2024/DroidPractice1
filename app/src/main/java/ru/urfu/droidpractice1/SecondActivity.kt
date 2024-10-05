@@ -17,7 +17,7 @@ import ru.urfu.droidpractice1.databinding.ActivitySecondBinding
 class SecondActivity : ComponentActivity() {
 
     private lateinit var binding: ActivitySecondBinding
-    private var readed by mutableStateOf(false)
+    private var readed: Boolean by mutableStateOf(false)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,11 +66,13 @@ class SecondActivity : ComponentActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
+        outState.putBoolean(READ_KEY, false)
         Log.e(MainActivity.LIFECYCLE_KEY, "SecondActivity onSaveInstanceState")
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
+        readed = savedInstanceState.getBoolean(READ_KEY)
         Log.e(MainActivity.LIFECYCLE_KEY, "SecondActivity onRestoreInstanceState")
     }
 

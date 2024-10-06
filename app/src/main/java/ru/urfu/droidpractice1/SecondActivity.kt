@@ -3,7 +3,6 @@ package ru.urfu.droidpractice1
 import android.content.Intent
 import androidx.activity.ComponentActivity
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.activity.addCallback
 import com.bumptech.glide.Glide
 import ru.urfu.droidpractice1.MainActivity.Companion.KEY_READ
@@ -27,7 +26,7 @@ class SecondActivity : ComponentActivity() {
 
             Glide.with(photo)
                 .asBitmap()
-                .load("https://n1s1.hsmedia.ru/36/6a/82/366a826bdafd6348f8f15fbfaa6024c8/656x438_1:5523_d56bb1fd264484cd4db894f82c9f60e1@3008x2008_0xVcnir67y_8864381406318415952.jpg.webp")
+                .load("https://img.championat.com/s/732x488/news/big/r/q/dzhoker-2-2024-otzyv-obzor_1728155102644467966.jpg")
                 .into(photo)
 
             checked = intent.getBooleanExtra("read", false)

@@ -2,25 +2,44 @@
 
 package ru.urfu.droidpractice1.content
 
+import android.os.Bundle
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.LargeTopAppBar
-import androidx.compose.material3.MediumTopAppBar
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.BiasAlignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.LayoutDirection
+import androidx.compose.ui.unit.dp
+import coil.compose.AsyncImage
+import ru.urfu.droidpractice1.MainScreenHandler
 import ru.urfu.droidpractice1.R
 import ru.urfu.droidpractice1.ui.theme.DroidPractice1Theme
+import ru.urfu.droidpractice1.ui.theme.Typography
 
 @Composable
-fun MainActivityScreen() {
+fun MainActivityScreen(
+    handler: MainScreenHandler,
+    likesCount: Int = 0
+) {
     DroidPractice1Theme {
         Scaffold(modifier = Modifier.fillMaxSize(),
             topBar = {
@@ -32,19 +51,77 @@ fun MainActivityScreen() {
                     }
                 )
             }) { innerPadding ->
-            Box(
-                modifier = Modifier.padding(innerPadding)
+            Column(
+                modifier = Modifier
+                    .verticalScroll(rememberScrollState())
+                    .padding(innerPadding)
+                    .padding(2.dp)
             ) {
+                Text(
+                    text = stringResource(id = R.string.a1_header),
+                    style = Typography.headlineLarge
+                )
+                AsyncImage(
+                    model = "https://img.championat.com/s/732x488/news/big/t/y/karlos-alkaras-uverenno-startoval-na-masterse-v-shanhae_17281084251277566002.jpg",
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 20.dp)
+                        .clip(RoundedCornerShape(16.dp))
+                        ,
+                    contentDescription = "Изображение"
+                )
+                Text(
+                    modifier = Modifier
+                        .padding(20.dp)
+                    ,
+                    text = stringResource(id = R.string.a1_main_text),
+                    style = Typography.bodyLarge
+                )
+                Row () {
+                    Icon(
+                        modifier = Modifier
+                            .clickable { handler.onClickLike() }
+                            .padding(start = 10.dp),
+                        painter = painterResource(id = R.drawable.like),
+                        contentDescription = null
+                    )
+                    Text(
+                        modifier = Modifier
+                            .padding(start = 10.dp),
+                        text = likesCount.toString()
+                    )
+                }
 
+                Card(
+                    modifier = Modifier
+                        .align { size: Int, space: Int, _: LayoutDirection ->
+                            (space - size) / 2
+                        }
+                        .padding(20.dp)
+                        .clickable { handler.onToOtherScreenClicked() }
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.article_next),
+                        modifier = Modifier.padding(16.dp),
+                    )
+                }
             }
         }
     }
 }
 
-
-
 @Preview(showBackground = true)
 @Composable
 fun MainScreenPreview() {
-    MainActivityScreen()
+    MainActivityScreen(handler = object : MainScreenHandler {
+        override fun onToOtherScreenClicked() {
+        }
+
+        override fun onClickLike() {
+        }
+
+        override fun onToShareClicked() {
+        }
+
+    })
 }

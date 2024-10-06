@@ -9,7 +9,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.ui.res.stringResource
 import ru.urfu.droidpractice1.content.MainActivityScreen
 
 class MainActivity : ComponentActivity(), MainScreenHandler {
@@ -41,13 +40,16 @@ class MainActivity : ComponentActivity(), MainScreenHandler {
 
     override fun onToOtherScreenClicked() {
         val intent = Intent(this, SecondActivity::class.java)
+            .apply {
+                putExtra(READ, read)
+            }
         resultLauncher.launch(intent)
     }
 
     private val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == RESULT_OK) {
             val data: Intent? = result.data
-            read = data?.getBooleanExtra(KEY_READ, false) ?: false
+            read = data?.getBooleanExtra(READ, false) ?: false
         }
     }
 
@@ -64,6 +66,6 @@ class MainActivity : ComponentActivity(), MainScreenHandler {
 
     companion object {
         const val LIKE = "LIKE"
-        const val KEY_READ = "READ"
+        const val READ = "READ"
     }
 }

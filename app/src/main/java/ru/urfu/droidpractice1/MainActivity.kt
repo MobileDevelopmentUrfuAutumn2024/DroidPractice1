@@ -18,6 +18,15 @@ class MainActivity : ComponentActivity() {
     private var likes by mutableIntStateOf(STARTVALUE)
     private var dislikes by mutableIntStateOf(STARTVALUE)
 
+    private val launcher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val data: Intent? = result.data
+            read = data?.getBooleanExtra(READ, false) ?: false
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -53,6 +62,7 @@ class MainActivity : ComponentActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putInt(LIKES, likes)
+        outState.putBoolean(READ, read)
         outState.putInt(DISLIKES, dislikes)
     }
 
@@ -60,15 +70,7 @@ class MainActivity : ComponentActivity() {
         super.onRestoreInstanceState(savedInstanceState)
         likes = savedInstanceState.getInt(LIKES)
         dislikes = savedInstanceState.getInt(DISLIKES)
-    }
-
-    private val launcher = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) { result ->
-        if (result.resultCode == RESULT_OK) {
-            val data: Intent? = result.data
-            read = data?.getBooleanExtra(READ, false) ?: false
-        }
+        read = savedInstanceState.getBoolean(READ)
     }
 
     override fun onStart() {

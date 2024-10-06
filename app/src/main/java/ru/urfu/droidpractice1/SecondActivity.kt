@@ -48,7 +48,16 @@ class SecondActivity : ComponentActivity() {
             })
             finish()
         }
+    }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putBoolean(READ, read)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        read = savedInstanceState.getBoolean(READ, false)
     }
 
     override fun onStart() {

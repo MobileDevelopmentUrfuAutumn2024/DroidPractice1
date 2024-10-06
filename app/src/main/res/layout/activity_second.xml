@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:text="Досье «Чёрная канарейка» (2024)"
                 android:textColor="@color/black"
-                android:textSize="22.sp"></TextView>
+                android:textSize="22.sp" />
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageview"

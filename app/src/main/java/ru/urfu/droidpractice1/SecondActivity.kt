@@ -8,6 +8,7 @@ import androidx.activity.addCallback
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.vectordrawable.animated.R
 import com.bumptech.glide.Glide
 import ru.urfu.droidpractice1.MainActivity.Companion.READ
 import ru.urfu.droidpractice1.databinding.ActivitySecondBinding
@@ -77,13 +78,13 @@ class SecondActivity : ComponentActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putBoolean("read", checked)
+        outState.putBoolean(READ, checked)
         Log.d("Second_Activity", "onSaveInstanceState")
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        checked = savedInstanceState.getBoolean("read")
+        checked = savedInstanceState.getBoolean(READ)
         Log.d("Second_Activity", "onRestoreInstanceState")
     }
 }

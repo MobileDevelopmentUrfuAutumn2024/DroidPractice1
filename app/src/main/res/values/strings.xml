@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">DroidPractice1</string>
-    <string name="article_title">Статья</string>
+    <string name="article_title">Хет-трик Левандовски принес «Барселоне» победу</string>
+    <string name="article_h1">Матч завершился победой «Барселоны» со счетом 3:0. Левандовски оформил четвертый по скорости хет-трик каталонцев в истории</string>
+    <string name="article_image">https://s0.rbk.ru/v6_top_pics/resized/590xH/media/img/0/80/347282347140800.webp</string>
+    <string name="article_source_part1">«Барселона» разгромила «Алавес» в гостевом матче девятого тура чемпионата Испании.</string>
+    <string name="article_source_part2">Матч в Витории завершился со счетом 0:3. Все мячи на счету Роберта Левандовски, который отличился на 7-й, 22-й и 32-й минутах — это четвертый по скорости хет-трик в Ла Лиге в истории «Барселоны».</string>
+    <string name="article_source_part3">Гол хозяев в первом тайме отменили после видеопросмотра.</string>
+    <string name="article_source_part4">«Барселона» набрала 24 очка и лидирует в чемпионате, опережая на три балла мадридский «Реал». В следующем туре каталонцы сыграют с «Севильей» 20 октября. «Алавес» проиграл третий матч подряд и занимает 13-е место, его следующим соперником будет «Вальядолид» 18 октября.</string>
+    <string name="second_article_h1">Роберт Левандовский</string>
+    <string name="second_article_image">https://commons.wikimedia.org/wiki/File:2019147183134_2019-05-27_Fussball_1.FC_Kaiserslautern_vs_FC_Bayern_München_-_Sven_-_1D_X_MK_II_-_0228_-_B70I8527_(cropped).jpg?uselang=ru</string>
+    <string name="second_article_part1">Польский футболист, нападающий испанского клуба «Барселона» и капитан национальной сборной Польши. Участник четырёх чемпионатов Европы (2012, 2016, 2020 и 2024) и двух чемпионатов мира (2018 и 2022). Считается одним из лучших нападающих в мире.</string>
 </resources>

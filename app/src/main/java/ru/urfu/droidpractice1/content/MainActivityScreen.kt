@@ -77,19 +77,30 @@ fun MainActivityScreen(
                     text = stringResource(id = R.string.a1_main_text),
                     style = Typography.bodyLarge
                 )
-                Row () {
-                    Icon(
-                        modifier = Modifier
-                            .clickable { handler.onClickLike() }
-                            .padding(start = 10.dp),
-                        painter = painterResource(id = R.drawable.like),
-                        contentDescription = null
-                    )
-                    Text(
-                        modifier = Modifier
-                            .padding(start = 10.dp),
-                        text = likesCount.toString()
-                    )
+                Row {
+                    Column {
+                        Icon(
+                            modifier = Modifier
+                                .clickable { handler.onToShareClicked() }
+                                .padding(start = 10.dp),
+                            painter = painterResource(id = R.drawable.share),
+                            contentDescription = null
+                        )
+                    }
+                    Column {
+                        Icon(
+                            modifier = Modifier
+                                .clickable { handler.onClickLike() }
+                                .padding(start = 10.dp),
+                            painter = painterResource(id = R.drawable.like),
+                            contentDescription = null
+                        )
+                        Text(
+                            modifier = Modifier
+                                .padding(start = 10.dp),
+                            text = likesCount.toString()
+                        )
+                    }
                 }
 
                 Card(

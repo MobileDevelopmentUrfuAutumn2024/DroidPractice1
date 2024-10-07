@@ -8,7 +8,6 @@ import androidx.activity.addCallback
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.vectordrawable.animated.R
 import com.bumptech.glide.Glide
 import ru.urfu.droidpractice1.MainActivity.Companion.READ
 import ru.urfu.droidpractice1.databinding.ActivitySecondBinding
@@ -16,8 +15,7 @@ import ru.urfu.droidpractice1.databinding.ActivitySecondBinding
 class SecondActivity : ComponentActivity() {
 
     private lateinit var binding: ActivitySecondBinding
-
-    private var checked: Boolean by mutableStateOf(false)
+    private var read: Boolean by mutableStateOf(false)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,16 +29,16 @@ class SecondActivity : ComponentActivity() {
 
             Glide.with(photo)
                 .asBitmap()
-                .load("https://n1s1.hsmedia.ru/36/6a/82/366a826bdafd6348f8f15fbfaa6024c8/656x438_1:5523_d56bb1fd264484cd4db894f82c9f60e1@3008x2008_0xVcnir67y_8864381406318415952.jpg.webp")
+                .load("https://img.championat.com/s/732x488/news/big/r/q/dzhoker-2-2024-otzyv-obzor_1728155102644467966.jpg")
                 .into(photo)
 
-            checked = intent.getBooleanExtra("read", false)
-            switchRead.isChecked = checked
-            switchRead.setOnCheckedChangeListener { _, isChecked -> checked = isChecked }
+            read = intent.getBooleanExtra(READ, false)
+            switchRead.isChecked = read
+            switchRead.setOnCheckedChangeListener { _, isChecked -> read = isChecked }
         }
 
         onBackPressedDispatcher.addCallback(this) {
-            setResult(RESULT_OK, Intent().apply { putExtra(READ, checked) })
+            setResult(RESULT_OK, Intent().apply { putExtra(READ, read) })
             finish()
         }
     }
@@ -71,20 +69,20 @@ class SecondActivity : ComponentActivity() {
     }
 
     override fun onDestroy() {
-        /* У нас на прошлой паре придумано предположение, что этот метод не вызовиться */
         Log.d("Second_Activity", "onDestroy")
         super.onDestroy()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putBoolean(READ, checked)
+        outState.putBoolean(READ, read)
         Log.d("Second_Activity", "onSaveInstanceState")
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        checked = savedInstanceState.getBoolean(READ)
+        read = savedInstanceState.getBoolean(READ)
         Log.d("Second_Activity", "onRestoreInstanceState")
     }
+
 }

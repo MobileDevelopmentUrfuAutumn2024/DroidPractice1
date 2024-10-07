@@ -2,6 +2,7 @@ package ru.urfu.droidpractice1
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
@@ -59,6 +60,7 @@ class MainActivity : ComponentActivity(), MainScreenHandler {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
+        Log.d("Main_Activity", "onSaveInstanceState")
         outState.apply {
             putInt(LIKE, like)
         }

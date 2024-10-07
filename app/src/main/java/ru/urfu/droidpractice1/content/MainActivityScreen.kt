@@ -2,7 +2,6 @@
 
 package ru.urfu.droidpractice1.content
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -33,7 +32,6 @@ import ru.urfu.droidpractice1.R
 import ru.urfu.droidpractice1.ui.theme.DroidPractice1Theme
 import ru.urfu.droidpractice1.ui.theme.Typography
 
-@SuppressLint("")
 @Composable
 fun MainActivityScreen(
     handler: MainScreenHandler,
@@ -147,21 +145,14 @@ fun MainActivityScreen(
 @Composable
 fun MainScreenPreview() {
     MainActivityScreen(handler = object : MainScreenHandler {
-        override fun onToOtherScreenClicked() {
 
-        }
+        override fun onToOtherScreenClicked() {}
 
-        override fun onToShareClicked() {
+        override fun onToShareClicked() {}
 
-        }
+        override fun onThumbUpClicked() {}
 
-        override fun onThumbUpClicked() {
-            TODO("Not yet implemented")
-        }
-
-        override fun onThumbDownClicked() {
-            TODO("Not yet implemented")
-        }
+        override fun onThumbDownClicked() {}
 
     })
 }

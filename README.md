@@ -1,6 +1,6 @@
 # Практика "Две статьи"
 
-![image](https://github.com/user-attachments/assets/9b5c896e-3c9c-4148-86fc-428eb8856040)
+![](https://github.com/MobileDevelopmentUrfuAutumn2024/DroidPractice1/blob/zhirnov/record.gif)
 
 В этой практике вам предстоит поработать с основными компонентами Android и сделать первые разметки - на Compose и Views (XML). 
 

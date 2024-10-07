@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">DroidPractice1</string>
     <string name="article_title">Статья</string>
+    <string name="title_mainActivity">Легенда Лана Роудс раскрыла страшную тайну, почему сбежала на пенсию в 22 года</string>
+    <string name="first_p_mainActivity">Сразу же после выхода из бизнеса Лана, которую на самом деле зовут Амара Мейпл, начала говорить о его "тёмной стороне". Недавно старлетка вновь разоткровенничалась о прошлом. "— Всё, о чём я думала на съёмочной площадке, — это моё выражение лица и звуки, которые я издаю.</string>
+    <string name="link_mainActivity_picture">https://avatars.mds.yandex.net/i?id=3e9a319882680e57d15a4e08ec4fcb65_l-4136742-images-thumbs&amp;n=13</string>
+    <string name="second_p_mainActivity">— Всего 1% или даже меньше актрис могут стать столь же популярными. Это путь не для всех. И вообще, этот бизнес пора сделать незаконным. По иронии судьбы Лана до сих пор номер один. Она лидирует в списках актрис на самых популярных сайтах для взрослых. Когда Роудс дебютировала, ей было всего 19, она даже не думала об успехе. А сейчас отговаривает других девушек идти по её стопам.</string>
+    <string name="title_secondActivity">«Ведьмак» от CD Projekt RED: что известно про следующие игры во вселенной Сапковского</string>
+    <string name="first_p_secondActivity">Игру разрабатывают на движке Unreal Engine 5. Компания отказалась от собственного движка RED Engine. Ранее на нем выпустили второго и третьего «Ведьмаков», а также Cyberpunk 2077. Студия объяснила решение техническими причинами: на Unreal Engine 5 легче разрабатывать масштабные игры в большом открытом мире.</string>
+    <string name="link_secondActivity_picture">https://opis-cdn.tinkoffjournal.ru/mercury/witcher-games-preview-01.zegc4gjelhug..jpg?preset=image_570w_2x</string>
+    <string name="second_p_secondActivity">Четвертый «Ведьмак» станет первой частью новой трилогии. Генеральный директор CD Projekt Group Адам Кичински рассказал об этом на собрании инвесторов в 2022 году. Две следующие части планируют выпустить в течение шести лет после выхода новой игры.</string>
 </resources>

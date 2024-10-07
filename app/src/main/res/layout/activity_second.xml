@@ -15,4 +15,54 @@
         android:title="@string/article_title"
         android:navigationIcon="@drawable/arrow_back" />
 
+    <ScrollView
+        android:id="@+id/secondScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/TextAppearance.M3.Sys.Typescale.TitleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Human merchant Ebka объяснил, чего не хватило для ecstatic в Trade с Dwarven local government" />
+
+            <TextView
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="На предмете написана хроника под названием 'Великие гномы', автором которой является Мелбил Адилзимеш. Это касается Зеркала Сокрытия. В целом, информация собрана не очень хорошо. Работа состоит из пяти глав." />
+
+            <ImageView
+                android:id="@+id/photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                tools:src="@drawable/ic_launcher_background"/>
+
+            <TextView
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="«В первой главе рассказывается о соревнованиях по рестлингу, проводимых The Mirror of Secreting в Gearpastime в рамках Фестиваля духовых инструментов ранней весной 12 года. Вторая глава посвящена чтению 'Поэмы о барвинках', которое проводится Зеркалом секреции в Gearpastime в рамках Фестиваля духовых инструментов в середине весны 14 года. Третий песнопевец произносит 'а!'" />
+
+            <Switch
+                android:id="@+id/switchRead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Прочитано" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </LinearLayout>

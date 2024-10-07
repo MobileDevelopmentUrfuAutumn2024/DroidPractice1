@@ -4,8 +4,6 @@ package ru.urfu.droidpractice1.content
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.gestures.scrollable
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,11 +12,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.LargeTopAppBar
-import androidx.compose.material3.MediumTopAppBar
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -41,7 +36,7 @@ fun MainActivityScreen(
     onToOtherScreen: () -> Unit = {},
     isRead: Boolean = true,
     onShareClick: () -> Unit = {},
-    feedback: Feedback = Feedback(0, 0),
+    feedback: Feedback = Feedback.getEmpty(),
     onLikeClick: () -> Unit = {},
     onDislikeClick: () -> Unit = {}
 ) {
@@ -70,7 +65,7 @@ fun MainActivityScreen(
                     .verticalScroll(rememberScrollState())
             ) {
                 Text(text = stringResource(R.string.s1_title), style = Typography.titleLarge)
-                Feedback(feedback.likes, feedback.dislikes, onLikeClick, onDislikeClick)
+                FeedbackView(feedback, onLikeClick, onDislikeClick)
                 Text(
                     text = stringResource(R.string.s1_1), modifier = Modifier.padding(top = 16.dp)
                 )
@@ -110,23 +105,28 @@ fun MainScreenPreview() {
 }
 
 @Composable
-fun Feedback(likes: Int, dislikes: Int, onLikeClick: () -> Unit, onDislikeClick: () -> Unit){
-    Row (
+fun FeedbackView(feedback: Feedback, onLikeClick: () -> Unit, onDislikeClick: () -> Unit) {
+    Row(
         modifier = Modifier
             .padding(top = 16.dp)
     ) {
-        Image( painter =
-        if (likes > 0) painterResource(id = R.drawable.thumb_up)
-        else painterResource(id = R.drawable.thumb_up_off),
+        Image(
+            painter = painterResource(feedback.likesImage),
             modifier = Modifier.clickable { onLikeClick.invoke() },
-            contentDescription = null)
-        Text(text = if (likes > 0) "$likes" else "",
-            modifier = Modifier.padding(start = 4.dp, end = 16.dp))
-        Image( painter = if (dislikes > 0) painterResource(id = R.drawable.thumb_down)
-            else painterResource(id = R.drawable.thumb_down_off),
+            contentDescription = null
+        )
+        Text(
+            text = feedback.likes,
+            modifier = Modifier.padding(start = 4.dp, end = 16.dp)
+        )
+        Image(
+            painter = painterResource(feedback.dislikesImage),
             modifier = Modifier.clickable { onDislikeClick.invoke() },
-            contentDescription = null)
-        Text(text = if (dislikes > 0) "$dislikes" else "",
-            modifier = Modifier.padding(start = 4.dp))
+            contentDescription = null
+        )
+        Text(
+            text = feedback.dislikes,
+            modifier = Modifier.padding(start = 4.dp)
+        )
     }
 }

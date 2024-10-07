@@ -1,7 +1,7 @@
 package ru.urfu.droidpractice1
 
-import androidx.activity.ComponentActivity
 import android.os.Bundle
+import androidx.activity.ComponentActivity
 import ru.urfu.droidpractice1.databinding.ActivitySecondBinding
 
 class SecondActivity : ComponentActivity() {

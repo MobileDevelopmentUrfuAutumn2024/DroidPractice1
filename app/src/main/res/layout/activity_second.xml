@@ -15,4 +15,75 @@
         android:title="@string/article_title"
         android:navigationIcon="@drawable/arrow_back" />
 
+
+    <ScrollView
+        android:id="@+id/secondScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="384dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="Когда обманули во всем: изучаем фейковый планшет, которым забиты маркетплейсы"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="350dp"
+                android:layout_height="93dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="37dp"
+                android:text="Если кратко, то производитель с продавцом обманули с каждой характеристикой, начиная от основного чипа, объемов ОЗУ, накопителя и заканчивая камерами, аккумулятором и экраном. Полный фейк в красивой упаковке."
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="361dp"
+                android:layout_height="210dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="18dp"
+                android:src="@drawable/tablets"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="355dp"
+                android:layout_height="406dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="28dp"
+                android:text="На Ozon и Wildberries в ценовом сегменте до 10 тыс. рублей – полная дичь. Вариантов с реальными характеристиками можно сосчитать по пальцам одной руки (в основном это отечественные бренды), все остальное – древние сверхбюджетные платформы из 2016 года, которым «насочиняли» на выбор 4/6/8/12/16 ГБ ОЗУ и 128/256/512/1024 ГБ накопителя. Также приписывают свежие версии Android, крутые камеры, емкие аккумуляторы и 8-ядерные процессоры. Вариант с 8 ГБ оперативной памяти и 512 ГБ накопителем – не самый крутой. За эти же деньги предлагают планшеты с 16 ГБ ОЗУ и 1 ТБ накопителем. И если многие покупатели могут заподозрить в них обман, то в более скромные характеристики вполне поверят. Поэтому взял поскромнее. В коробке лежит сам планшет, Bluetooth-клавиатура, проводная мышь с переходником USB-A - Type-C, стилус, миниатюрная Bluetooth-колонка, стильный чехол, подставка, ключ для извлечения лотка с картами, зарядка с кабелем и краткая инструкция на русском языке. В общем, все, чтобы внушить чувство, будто покупатель сорвал джек-пот. Но я бы добавил конверт с деньгами."
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="33dp"
+                android:layout_marginTop="27dp"
+                android:text="Прочитано"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 </LinearLayout>

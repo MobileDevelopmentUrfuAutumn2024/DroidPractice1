@@ -2,7 +2,6 @@
 
 package ru.urfu.droidpractice1.content
 
-import android.content.Context
 import android.content.Intent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -18,6 +17,7 @@ import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -30,19 +30,18 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat.startActivity
 import coil.compose.AsyncImage
+import ru.urfu.droidpractice1.MainActivity
 import ru.urfu.droidpractice1.R
-import ru.urfu.droidpractice1.SecondActivity
 import ru.urfu.droidpractice1.ui.theme.DroidPractice1Theme
 
 @Composable
-fun MainActivityScreen(context: Context) {
+fun MainActivityScreen(context: MainActivity, isRead: Boolean) {
     val likesCount = rememberSaveable { mutableIntStateOf(0) }
     val dislikesCount = rememberSaveable { mutableIntStateOf(0) }
     val titleText = "Вышел Chrome 105"
@@ -116,10 +115,13 @@ fun MainActivityScreen(context: Context) {
                     Spacer(modifier = Modifier.height(16.dp))
 
                     // Кнопка для перехода на другую статью
-                    Button(onClick = {
-                        val intent = Intent(context, SecondActivity::class.java)
-                        startActivity(context, intent, null)
-                    }) {
+                    Button(colors = ButtonDefaults.buttonColors(
+                        containerColor = if (isRead) Color.Gray else Color.Cyan,
+                    ), onClick = {
+                        context.onSecondActivityClick()
+                    }
+
+                    ) {
                         Text("Читать следующую статью")
                     }
 
@@ -146,9 +148,3 @@ fun MainActivityScreen(context: Context) {
     }
 }
 
-
-@Preview(showBackground = true)
-@Composable
-fun MainScreenPreview() {
-    MainActivityScreen(LocalContext.current)
-}

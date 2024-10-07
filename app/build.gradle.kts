@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "ru.urfu.droidpractice1"
-        minSdk = 28
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -54,7 +54,15 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.ui.test.android)
     testImplementation(libs.junit)
+    implementation(libs.glide)
+    // https://mvnrepository.com/artifact/io.coil-kt/coil
+    implementation(libs.coil.v270)
+// https://mvnrepository.com/artifact/io.coil-kt/coil-compose
+    implementation(libs.coil.compose.v270)
+
+    implementation(libs.coil)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))

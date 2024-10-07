@@ -15,4 +15,76 @@
         android:title="@string/article_title"
         android:navigationIcon="@drawable/arrow_back" />
 
+    <ScrollView
+        android:id="@+id/secondScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/TextAppearance.M3.Sys.Typescale.TitleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ещё 5 дополнительных фактов о пушистых друзьях!" />
+
+            <ImageView
+                android:id="@+id/photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                tools:src="@drawable/ic_launcher_background"/>
+
+            <TextView
+                android:accessibilityPaneTitle=""
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="1. Рекордное потомство\nВ среднем за один помет кошка приносит от 1 до 6 котят. Рекорд же — 18 котят, 15 из которых оказались жизнеспособны. А самой плодовитой кошкой считается пятнистая табби по кличке Дасти, жившая в американском Техасе. Хозяева подсчитали, что за всю жизнь она родила более 400 котят. При этом, последний раз она «стала мамой» уже на 19-м году жизни." />
+
+            <TextView
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="2. Кошки могут быть причиной болезней\nИ это вовсе не аллергия на кошачью шерсть. Есть два официально установленных психических заболевания: айлурофилия (чрезмерная привязанность к кошкам) и айлурофобия (патологическая боязнь домашних кошек)." />
+
+            <TextView
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="3. Не только человек может страдать от аллергии на кошек\nДа, у кошек тоже бывает аллергия на «людей», а точнее на то, что с ними связано. Например, причиной аллергических реакций у питомцев могут стать сигаретный дым, запахи парфюмерии и даже человеческая перхоть." />
+
+            <TextView
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="4. Среди котов тоже бывают долгожители\nСредняя продолжительность жизни кошек при должном уходе — 12-15 лет. Нередко питомцы доживают до 20 лет и более. Но есть и абсолютные рекордсмены. Например, кошка по кличке Кримм Пафф из США прожила 38 лет и 3 дня." />
+
+            <TextView
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="5. Кошки-гиганты — это не миф\nВ мире кошек есть свои гиганты. Безусловно, самыми крупными представителями негибридных домашних пород являются мейн-куны. Длина их тела может достигать 120 см, а вес котов — 12-15 кг." />
+
+            <Switch
+                android:id="@+id/switchRead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Прочитано" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </LinearLayout>

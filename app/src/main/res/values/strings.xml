@@ -1,4 +1,15 @@
 <resources>
-    <string name="app_name">DroidPractice1</string>
-    <string name="article_title">Статья</string>
+    <string name="app_name">OvinkinDroidPractice1</string>
+    <string name="article_title">Золото скуфов</string>
+    <string name="article_description">Где его найти в России</string>
+    <string name="hero_title">Находки в Долине царей</string>
+    <string name="hero_description">В России, как и в Египте, есть своя Долина царей — на севере Тувы, у Саянских гор. Здесь нашли артефакты раннескифского периода (IX-VII века до нашей эры), которые подтверждают теорию древнегреческого ученого Геродота об азиатском происхождении этих кочевников.</string>
+    <string name="hero_image">https://cdnn21.img.ria.ru/images/07e8/0a/04/1976450708_0:0:3423:2038_1440x0_80_0_0_16d539a5121997172021159893afb8bb.jpg.webp</string>
+    <string name="hero_image_descr">Коллекция "Золото скифов" в Национальном музее Республики Тыва</string>
+    <string name="hero_description_second">Семь лет ученые исследуют курган Туннуг, где, как они считают, находятся захоронения скифской знати. Там уже обнаружили украшения из золота (бусы, гривна — обруч на шею), бронзовые зеркало, нож и акинак — короткий меч с навершием в зверином стиле.</string>
+    <string name="rating_title">Оцените качество нашей статьи</string>
+    <string name="footer_title">Посмотрите другую нашу статью и случится магия</string>
+    <string name="footer_description">Прочитайте и магия произойдет здесь</string>
+    <string name="footer_description_readed">Вау, магия действительно произошла</string>
+    <string name="footer_link">Хочу прочитать</string>
 </resources>

@@ -29,7 +29,7 @@ class SecondActivity : ComponentActivity() {
 
             Glide.with(photo)
                 .asBitmap()
-                .load("https://n1s1.hsmedia.ru/36/6a/82/366a826bdafd6348f8f15fbfaa6024c8/656x438_1:5523_d56bb1fd264484cd4db894f82c9f60e1@3008x2008_0xVcnir67y_8864381406318415952.jpg.webp")
+                .load(getString(R.string.link_picture))
                 .into(photo)
 
             checked = intent.getBooleanExtra("read", false)

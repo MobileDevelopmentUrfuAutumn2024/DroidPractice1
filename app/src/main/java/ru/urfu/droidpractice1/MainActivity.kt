@@ -19,6 +19,13 @@ class MainActivity : ComponentActivity() {
 
     private var countLike: Int by mutableIntStateOf(0)
 
+    private val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val data: Intent? = result.data
+            read = data?.getBooleanExtra(KEY_READ, false) ?: false
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -92,19 +99,12 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun onLikePlus() {
-        ++countLike
+        countLike++
     }
 
     private fun onLikeMinus() {
         if (countLike > 0) {
-            --countLike
-        }
-    }
-
-    private val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == RESULT_OK) {
-            val data: Intent? = result.data
-            read = data?.getBooleanExtra(KEY_READ, false) ?: false
+            countLike--
         }
     }
 }

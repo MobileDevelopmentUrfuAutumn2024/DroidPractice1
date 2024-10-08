@@ -63,15 +63,15 @@ class MainActivity : ComponentActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putInt("count", likeCount)
-        outState.putBoolean("read", isStateRead)
+        outState.putInt("likeCount", likeCount)
+        outState.putBoolean("isStateRead", isStateRead)
         Log.d("Main_Activity", "onSaveInstanceState")
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        likeCount = savedInstanceState.getInt("count")
-        isStateRead = savedInstanceState.getBoolean("read")
+        likeCount = savedInstanceState.getInt("likeCount")
+        isStateRead = savedInstanceState.getBoolean("isStateRead")
         Log.d("Main_Activity", "onRestoreInstanceState")
     }
 
@@ -83,16 +83,18 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun onToOtherScreenClicked() {
+        /** Перекидываем на другую Activity и передаем значение isStateRead */
         val intent =
-            Intent(this, SecondActivity::class.java).apply { putExtra("read", isStateRead) }
+            Intent(this, SecondActivity::class.java).apply { putExtra("isStateRead", isStateRead) }
         resultLauncher.launch(intent)
     }
 
     private val resultLauncher =
+        /** Получаем значение isStateRead с другой Activity */
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
                 val data: Intent? = result.data
-                isStateRead = data?.getBooleanExtra("READ", false) ?: false
+                isStateRead = data?.getBooleanExtra("isStateRead", false) ?: false
             }
         }
 

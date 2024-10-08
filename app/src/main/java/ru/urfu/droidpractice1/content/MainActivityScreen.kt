@@ -41,6 +41,7 @@ import ru.urfu.droidpractice1.R
 import ru.urfu.droidpractice1.ui.theme.DroidPractice1Theme
 import ru.urfu.droidpractice1.ui.theme.Grayscale0
 import ru.urfu.droidpractice1.ui.theme.Grayscale200
+import ru.urfu.droidpractice1.ui.theme.Red400
 
 @Composable
 fun MainActivityScreen(
@@ -196,21 +197,19 @@ fun MainActivityScreen(
                     Row(
                         modifier = Modifier
                             .padding(32.dp)
-                            .background(Grayscale200)
+                            .background(if (isStateRead) Grayscale200 else Red400)
                             .clip(RoundedCornerShape(16.dp)),
                     ) {
                         Text(
-                            modifier = Modifier
-                                .fillMaxWidth(),
-                            color = Color.Black,
+                            modifier = Modifier.fillMaxWidth(),
+                            color = Grayscale0,
                             textAlign = TextAlign.Center,
-                            text = stringResource(id = R.string.footer_description),
+                            text = stringResource(id = if (isStateRead) R.string.footer_description_readed else R.string.footer_description),
                         )
                     }
 
                     TextButton(
-                        onClick = onToOtherScreenClicked,
-                        modifier = Modifier.align(Alignment.End)
+                        onClick = onToOtherScreenClicked, modifier = Modifier.align(Alignment.End)
                     ) {
                         Text(text = stringResource(id = R.string.footer_link))
                     }

@@ -17,7 +17,7 @@ import ru.urfu.droidpractice1.databinding.ActivitySecondBinding
 class SecondActivity : ComponentActivity() {
 
     private lateinit var binding: ActivitySecondBinding
-    private var isRead: Boolean = false;
+    private var isRead: Boolean by mutableStateOf(false)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

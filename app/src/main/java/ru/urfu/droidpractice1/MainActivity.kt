@@ -9,8 +9,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import ru.urfu.droidpractice1.content.MainActivityScreen
 
 class MainActivity : ComponentActivity() {
-    private var likesCount: Int = 0
-    private var secondArticleIsRead: Boolean = false
+    private var likesCount: Int by mutableIntStateOf(0)
+    private var secondArticleIsRead: Boolean by mutableStateOf(false)
     private var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == RESULT_OK) {
             secondArticleIsRead = result.data?.getBooleanExtra(SECOND_ARTICLE_IS_READ, false) ?: false

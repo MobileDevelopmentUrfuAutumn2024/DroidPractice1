@@ -15,4 +15,54 @@
         android:title="@string/article_title"
         android:navigationIcon="@drawable/arrow_back" />
 
+    <ScrollView
+        android:id="@+id/secondScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/TextAppearance.M3.Sys.Typescale.TitleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Команда Quantinuum добилась прорыва в квантовых вычислениях" />
+
+            <TextView
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Команда инженеров и физиков из компании квантовых вычислений Quantinuum провела первую в истории телепортацию логического кубита с использованием отказоустойчивых методов. В своей статье, опубликованной в журнале Science, группа описывает использованные ими методы настройки и телепортации, а также точность, достигнутую каждым из них." />
+
+            <ImageView
+                android:id="@+id/photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                tools:src="@drawable/ic_launcher_background"/>
+
+            <TextView
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Одним из основных препятствий в разработке действительно пригодного к использованию квантового компьютера была тенденция квантовых компьютеров к ошибкам при работе над решениями. Одним из подходов к уменьшению ошибок является введение логических кубитов, которые могут быть использованы на нескольких физических кубитах." />
+
+            <Switch
+                android:id="@+id/switchRead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Прочитано" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </LinearLayout>

@@ -15,4 +15,23 @@
         android:title="@string/article_title"
         android:navigationIcon="@drawable/arrow_back" />
 
+    <!-- Добавляем ImageView для изображения cat2 -->
+    <ImageView
+        android:id="@+id/imageViewCat"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/cat2"
+        android:padding="16dp"
+        android:scaleType="centerCrop" />
+
+
+    <!-- Добавляем TextView для пунктов -->
+    <TextView
+        android:id="@+id/text_view_points"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="16sp" />
+
+
 </LinearLayout>

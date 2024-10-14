@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "DroidPractice1"
 include(":app")
+
+

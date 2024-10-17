@@ -3,111 +3,143 @@
 package ru.urfu.droidpractice1.content
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.ui.res.painterResource
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.BottomAppBar
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.ColorPainter
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import ru.urfu.droidpractice1.MainActivity
+import ru.urfu.droidpractice1.MainScreenHandler
 import ru.urfu.droidpractice1.R
-import ru.urfu.droidpractice1.interfaces.MainActivityInterface
-import ru.urfu.droidpractice1.storage.Article
 import ru.urfu.droidpractice1.ui.theme.DroidPractice1Theme
+import ru.urfu.droidpractice1.ui.theme.Typography
 
 @Composable
 fun MainActivityScreen(
-    mainActivityInterface: MainActivityInterface,
-    article: Article
+    handler: MainScreenHandler,
+    isRead: Boolean = false,
+    likesCount: Int = 0
 ) {
     DroidPractice1Theme {
         Scaffold(modifier = Modifier.fillMaxSize(),
-            bottomBar = {
-                BottomAppBar {
-                    Icon(
-                        modifier = Modifier.padding(10.dp)
-                            .clickable { mainActivityInterface.onShareClick() },
-                        painter = painterResource(R.drawable.ic_share),
-                        contentDescription = null
-                    )
-                }
-            },
             topBar = {
                 TopAppBar(
                     title = {
                         Text(
                             text = stringResource(id = R.string.article_title)
                         )
+                    },
+                    actions = {
+                        Icon(
+                            modifier = Modifier
+                                .padding(horizontal = 16.dp)
+                                .clickable { handler.onToShareClicked() },
+                            painter = painterResource(id = R.drawable.share),
+                            contentDescription = "Кнопка поделиться"
+                        )
                     }
                 )
-            }) { innerPadding ->
+            },
+            ) { innerPadding ->
             Column(
                 modifier = Modifier
                     .verticalScroll(rememberScrollState())
                     .padding(innerPadding)
+                    .padding(16.dp)
             ) {
                 Text(
-                    text = article.title
+                    text = stringResource(id = R.string.article_header),
+                    style = Typography.titleLarge
                 )
+
                 AsyncImage(
-                    placeholder = ColorPainter(Color.Gray),
-                    // URI на картинку я нагло украл, так как у меня падала ошибка на мои картинки
-                    model = article.imageUri,
-                    modifier = Modifier.padding(innerPadding)
-                        .wrapContentSize(align = Alignment.Center)
-                        .fillMaxWidth().height(300.dp),
-                    contentDescription = null,
-                    error = ColorPainter(Color.Red),
-                    )
-                Text(
-                    text = article.text
+                    model = "https://minio.nplus1.ru/app-images/960401/66fcc509b71ea_img_desktop.jpeg",
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(RoundedCornerShape(8.dp)),
+                    contentDescription = "Изображение дерева"
                 )
-                Row(
-                    modifier = Modifier.padding(10.dp)
+
+
+                Text(
+                    text = stringResource(id = R.string.article_subtitle),
+                    modifier = Modifier.padding(vertical = 16.dp)
+                )
+
+                Text(
+                    modifier = Modifier.padding(top = 16.dp),
+                    text = stringResource(id = R.string.article_main_text),
+                    style = Typography.bodyLarge
+                )
+
+                Card(
+                    modifier = Modifier
+                        .padding(top = 16.dp)
+                        .clickable { handler.onToOtherScreenClicked() }
                 ) {
-                    Icon(
-                        modifier = Modifier.padding(10.dp)
-                            .clickable { mainActivityInterface.onLikeClick() },
-                        painter = painterResource(R.drawable.ic_thumbup),
-                        contentDescription = null
-                    )
                     Text(
-                        text = article.likes.toString()
+                        modifier = Modifier.padding(16.dp),
+                        text = stringResource(id = R.string.article_additional_info_button_text),
+                        color = if (isRead) Color.Gray else Color.Black
                     )
+                }
+
+                Row {
                     Icon(
                         modifier = Modifier
-                            .padding(10.dp)
-                            .clickable { mainActivityInterface.onDislikeClick() },
-                        painter = painterResource(R.drawable.ic_thumbdown),
-                        contentDescription = null
+                            .padding(16.dp)
+                            .clickable { handler.onThumbUpClicked() },
+                        painter = painterResource(id = R.drawable.thumb_up),
+                        contentDescription = "Кнопка поставить лайк"
                     )
+
+                    Icon(
+                        modifier = Modifier
+                            .padding(16.dp)
+                            .clickable { handler.onThumbDownClicked() },
+                        painter = painterResource(id = R.drawable.thumb_down),
+                        contentDescription = "Кнопка убрать лайк"
+                    )
+
                     Text(
-                        text = article.disLikes.toString()
+                        modifier = Modifier
+                            .padding(vertical = 16.dp),
+                        text = likesCount.toString(),
+                        fontSize = 20.sp
                     )
-                    // тут лайки дизлайки
                 }
-                Text(
-                    text = "Гиперссылка на другую очень крутую статью",
-                    modifier = Modifier.padding(vertical = 50.dp)
-                )
             }
         }
     }
+}
+
+
+
+@Preview(showBackground = true)
+@Composable
+fun MainScreenPreview() {
+    MainActivityScreen(handler = object : MainScreenHandler {
+        override fun onToOtherScreenClicked() {
+        }
+
+        override fun onToShareClicked() {
+        }
+
+        override fun onThumbUpClicked() {
+        }
+
+        override fun onThumbDownClicked() {
+        }
+
+    })
 }

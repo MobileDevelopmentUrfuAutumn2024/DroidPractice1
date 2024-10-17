@@ -2,48 +2,112 @@ package ru.urfu.droidpractice1
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import ru.urfu.droidpractice1.SecondActivity.Companion.KEY_READ
 import ru.urfu.droidpractice1.content.MainActivityScreen
-import ru.urfu.droidpractice1.interfaces.MainActivityInterface
-import ru.urfu.droidpractice1.storage.Article
 
-class MainActivity : ComponentActivity() {
-    var article = Article(
-        title = "Очень крутая статья",
-        text = "Очень крутой многострочный текст. Очень крутой многострочный текстОчень крутой многострочный текст. Очень крутой многострочный текстОчень крутой многострочный текстОчень крутой многострочный текст",
-        imageUri = "https://cdn.bulldogjob.com/system/readables/covers/000/002/329/max_res/How_%28not%29_to_break_your_app_with_hasCode%28%29_and_equals%28%29.png"
-    )
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            MainActivityScreen(MainActivityLogic(this), article)
-        }
-    }
-    inner class MainActivityLogic(private val context: MainActivity) : MainActivityInterface
-    {
-        override fun onLikeClick() {
-            article.likes++
-        }
+class MainActivity : ComponentActivity(), MainScreenHandler {
 
-        override fun onDislikeClick() {
-            article.disLikes++
-        }
+    private var isRead: Boolean by mutableStateOf(false)
+    private var likesCount: Int by mutableIntStateOf(0)
 
-        override fun onFirstViewed() {
-            article.isViewed = true
-        }
-
-        override fun onShareClick() {
-            Intent(Intent.ACTION_SEND).apply {
-                type = "text/plain"
-                putExtra(Intent.EXTRA_TEXT, article.text)
-                startActivity(Intent.createChooser(this, "Поделиться"))
+    private val resultLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == RESULT_OK) {
+                isRead = result.data?.getBooleanExtra(KEY_READ, false) ?: false
             }
         }
 
-        override fun onLinkClick() {
-            // не успел
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        Log.d("MainActivity", "inside onCreate")
+
+        setContent {
+            MainActivityScreen(
+                this,
+                isRead,
+                likesCount
+            )
         }
     }
+
+    override fun onToShareClicked() {
+        Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TEXT, getString(R.string.article_header))
+            startActivity(Intent.createChooser(this, "Поделиться"))
+        }
+    }
+
+    override fun onToOtherScreenClicked() {
+        val intent = Intent(this, SecondActivity::class.java)
+        intent.putExtra(IS_READ, isRead)
+        resultLauncher.launch(intent)
+    }
+
+    override fun onThumbUpClicked() {
+        likesCount++
+    }
+
+    override fun onThumbDownClicked() {
+        if (likesCount > 0) likesCount-- else likesCount
+    }
+
+    override fun onStart() {
+        Log.d("MainActivity", "inside onStart")
+        super.onStart()
+    }
+
+    override fun onRestart() {
+        Log.d("MainActivity", "inside onRestart")
+        super.onRestart()
+    }
+
+    override fun onResume() {
+        Log.d("MainActivity", "inside onResume")
+        super.onResume()
+    }
+
+    override fun onPause() {
+        Log.d("MainActivity", "inside onPause")
+        super.onPause()
+    }
+
+    override fun onStop() {
+        Log.d("MainActivity", "inside onStop")
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        Log.d("MainActivity", "inside onDestroy")
+        super.onDestroy()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putBoolean(IS_READ, isRead)
+        outState.putInt(LIKES_COUNT, likesCount)
+        Log.d("MainActivity", "inside onSaveInstanceState")
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        isRead = savedInstanceState.getBoolean(IS_READ)
+        likesCount = savedInstanceState.getInt(LIKES_COUNT)
+        Log.d("MainActivity", "inside onRestoreInstanceState")
+    }
+
+    companion object {
+        const val IS_READ = "IS_READ"
+        const val LIKES_COUNT = "LIKES_COUNT"
+    }
+
 }

@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">DroidPractice1</string>
     <string name="article_title">Статья</string>
+    <string name="loading">Загрузка</string>
+    <string name="article">Статья</string>
+    <string name="relevant">Смотрите также</string>
+    <string name="viewed">Просмотрено</string>
+    <string name="share">Поделиться</string>
 </resources>

@@ -14,8 +14,10 @@ activity = "1.9.2"
 constraintlayout = "2.1.4"
 coilCompose = "2.7.0"
 coilComposeVersion = "2.7.0"
+materialIconsExtended = "1.7.4"
 
 [libraries]
+androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialIconsExtended" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilComposeVersion" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }

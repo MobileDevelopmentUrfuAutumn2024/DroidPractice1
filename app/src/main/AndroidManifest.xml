@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SecondActivity"
+            android:name="SecondActivity"
+            android:theme="@style/Theme.Material3.DayNight"
             android:exported="false" />
     </application>
 

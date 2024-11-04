@@ -1,4 +1,4 @@
-package ru.urfu.droidpractice1.ui.theme
+package ru.urfu.droidpractice1.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

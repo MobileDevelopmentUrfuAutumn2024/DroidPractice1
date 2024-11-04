@@ -1,6 +1,5 @@
-package ru.urfu.droidpractice1.ui.theme
+package ru.urfu.droidpractice1.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

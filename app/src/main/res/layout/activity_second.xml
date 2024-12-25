@@ -16,53 +16,54 @@
         android:navigationIcon="@drawable/arrow_back" />
 
     <ScrollView
-        android:id="@+id/secondScrollView"
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
-
             <TextView
                 android:id="@+id/title"
-                style="@style/TextAppearance.M3.Sys.Typescale.TitleLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Игрок «Крыльев» Костанца объяснил, чего не хватило для победы в матче с «Химками»" />
-
+                android:layout_marginBottom="16dp"
+                style="@style/TextAppearance.Material3.TitleLarge"
+                android:textStyle="bold"
+                android:text="@string/second_title" />
             <TextView
-                style="@style/TextAppearance.Material3.BodyLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Бразильский футболист «Крыльев Советов» Фернандо Костанца прокомментировал ничейный результат в матче 10-го тура Российской Премьер-Лиги с «Химками». Встреча прошла сегодня в Самаре. Она закончилась со счётом 0:0." />
-
+                android:layout_marginBottom="16dp"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:text="@string/second_part1" />
             <ImageView
-                android:id="@+id/photo"
+                android:id="@+id/image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                tools:src="@drawable/ic_launcher_background"/>
-
+                android:layout_marginBottom="16dp" />
             <TextView
-                style="@style/TextAppearance.Material3.BodyLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="«Мы не забили. Вот, что случилось сегодня. Думаю, мы провели хороший матч. Старались что-то создать, контролировали мяч. Возможно, последний пас и удары были не самыми лучшими», — сказал Костанца в беседе с корреспондентом «Чемпионата» Ильёй Никульниковым." />
-
+                android:layout_marginBottom="16dp"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:textStyle="bold"
+                android:text="@string/second_secondString" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:text="@string/second_part2" />
             <Switch
-                android:id="@+id/switchRead"
+                android:id="@+id/readSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Прочитано" />
-
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:text="Прочитано"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
         </LinearLayout>
-
     </ScrollView>
 
 </LinearLayout>

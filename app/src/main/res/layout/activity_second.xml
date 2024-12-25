@@ -7,12 +7,83 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".SecondActivity">
-
     <Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:title="@string/article_title"
         android:navigationIcon="@drawable/arrow_back" />
+
+    <ScrollView
+        android:id="@+id/secondScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/TextAppearance.M3.Sys.Typescale.TitleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Обзор Indiana Jones and the Great Circle" />
+
+            <ImageView
+                android:id="@+id/photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                tools:src="@drawable/ic_launcher_background"/>
+
+            <TextView
+                android:accessibilityPaneTitle=""
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Разработку этой игры нужно было поручить другим авторам, а ещё сделать перспективу от третьего лица, не настолько деревянные анимации и не такой корявый визуал — именно с этими мыслями мы готовились встречать очередную паршивую овцу из-под крыла Microsoft вместе с Bethesda Softworks и самим Тоддом Говардом в роли продюсера. Еще один никудышный релиз на Xbox? Нам не привыкать!" />
+
+            <TextView
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Но то ли игроки в 2024 году достаточно настрадались от нехороших видеоигр. То ли случилось чудо, палка стрельнула раз в год и рак на горе свистнул — короче говоря, опасения были напрасными. Новая игра Indiana Jones and the Great Circle не просто удалась, и не только стала одной из лучших в сезоне, но еще и смело может носить титул главного приключения для поколения игроков, у которых эти самые приключения закончились на титрах последней игры про Нейтана Дрейка в 2016 году." />
+
+            <TextView
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Indiana Jones and the Great Circle — это скорая помощь для тех, кто в принципе подразочаровался в играх. Ведь ничего более эффектного, веселого и сделанного с такой любовью к деталям — не выходило давно. И здесь без интриги: авторами новой игры про Индиану Джонса стали те же люди, что уже дважды удивляли нас релизами Wolfenstein: The New Order в 2014 году и Wolfenstein II: The New Colossus в 2017 году." />
+
+            <TextView
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Главный герой игры вряд ли нуждается в отдельном представлении. И все же: доктор исторических наук, археолог и неисправимый приключенец — Индиана Джонс. Карикатурный персонаж из одноименного кино. Чертовски харизматичный, неисправимо любопытный и аномально везучий археолог." />
+
+            <TextView
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="В этой истории он всё так же бегает в потрепанной шляпе, хлещет злодеев кнутом, лупит из револьвера, выживает в диких джунглях, мерзнет в холодных горах и оказывается втянут в опасную авантюру с роковыми красотками, ядовитыми змеями и скорпионами. А еще перестрелка на самолетах и погоня с лодками, побег от каменного валуна и полет на дирижабле — такой себе стереотипный набор любого искателя приключений. Сквозь антуражные пейзажи. И на волоске от смерти." />
+
+            <Switch
+                android:id="@+id/switchRead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Прочитано" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

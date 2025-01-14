@@ -8,11 +8,60 @@
     android:orientation="vertical"
     tools:context=".SecondActivity">
 
+
+
+
     <Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:title="@string/article_title"
-        android:navigationIcon="@drawable/arrow_back" />
+        android:background="#40C4FF"
+        android:navigationIcon="@drawable/arrow_back"
+        android:title="@string/second_title" />
+
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/linear_layour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/image_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/stan_lee" />
+
+
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/second_text"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="match_parent"
+                android:showText="false"
+                android:layout_height="wrap_content"
+                android:switchPadding="6dp"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                tools:text="Прочитано" />
+        </LinearLayout>
+    </ScrollView>
+
 
 </LinearLayout>

@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">DroidPractice1</string>
     <string name="article_title">Статья</string>
+    <string name="first_title_h1">Unreal Engine 5.5</string>
+    <string name="first_text_a">На фестивале Unreal Fest 2024 компания Epic Games объявила о выпуске ранней версии Unreal Engine 5.5. Ее уже можно опробовать.</string>
+    <string name="first_text_b">Из нововведений: Новая эксперементальная функция MegaLights, улучшение рендеринга, оптимизация движка Chaos Physics</string>
+
+    <string name="second_title_h1">Глава телеграмма Павел Дуров был арестован</string>
+    <string name="second_text_a">24 авгуса в Париже около 8 часов вечера по UTC+2 был арестован Павел Дуров, когда он вышел из своего частного самолёта на взлётной полосе в аэропорту Ле Бурже</string>
+    <string name="second_text_b">В деле Дурова оказалось 12 обвинений. Среди них: отказ от сотрудничества с властями, перевозке, хранении, сбыте или передаче наркотических средств.</string>
 </resources>

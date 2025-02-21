@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="article_gap">16dp</dimen>
+    <dimen name="second_article_left_padding">12dp</dimen>
+    <dimen name="second_article_right_padding">8dp</dimen>
+    <dimen name="second_article_gap">8dp</dimen>
+</resources>

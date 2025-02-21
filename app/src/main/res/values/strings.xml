@@ -1,4 +1,25 @@
 <resources>
     <string name="app_name">DroidPractice1</string>
     <string name="article_title">Статья</string>
+
+    <!--    Первая статья-->
+    <string name="article_header">Hibernate: Equals и HashCode методы</string>
+    <string name="first_part">Всегда ли нужно определять эти два метода, ответ нет, в среднем случае приложению достаточно дефолтных реализаций. Но так же есть и те случаи кода требуется кастомная реализация, т. к. это может существенно увеличить производительность приложения, либо ухудшить, в случае если вы допустили ошибку.</string>
+    <string name="second_part">Будте внимательны при выборе полей кандидатов в Equals и HashCode, это критично если ваши сущности будут храниться в коллекции типа Set или Map, либо вам приходится работать с detached объектами. В основном рекомендуют использовать уникальный идентификатор и/или так называемые «натуральные ключи», т. е. Поле однозначно идентифицирующее объект и которое является уникальным.</string>
+    <string name="third_part">Избегайте использования @Data и @ToString аннотаций Lombok. Обе эти аннотации использую все поля объектов по умолчанию, что может послужить причиной проблем. При большом желании, можно использовать @ToString, главное не забывайте исключить LAZY поля вышей сущности из обработки при помощи @ToString.Exclude.</string>
+    <string name="article_picture_link">https://cdn.bulldogjob.com/system/readables/covers/000/002/329/max_res/How_%28not%29_to_break_your_app_with_hasCode%28%29_and_equals%28%29.png</string>
+    <string name="article_picture_link_description">Equals and hashcode image</string>
+    <string name="link_article_header">Не используйте Lombok с JPA, пока не прочтете эту статью</string>
+
+<!--    Вторая статья-->
+    <string name="link_article_first_part">Первая аннотация, которая может вызвать проблемы — это аннотация @EqualsAndHashCode. Что тут говорить? Сами по себе методы equals() и hashCode() — тема, способная вызвать немало жарких споров, а уж в контексте JPA и подавно! Чего только стоят десятки вопросов на Stackoverflow в стиле “Как правильно переопределить equals() и hashCode() для JPA сущности?”</string>
+    <string name="link_article_second_part">Все дело в том, что Lombok генерирует реализации методов equals() и hashCode(), отталкиваясь от всех полей, объявленных в сущности</string>
+    <string name="link_article_third_part">Если нас есть поле id, значение которого после создания сущности — null, и изменяется на какое-то конкретное значение только после сохранения в базу, значение hashCode у этой самой сущности будет отличаться до и после сохранения в базу данных.</string>
+    <string name="link_article_picture_link">https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8co-7TjTlLZ84vMeS5fnZbVQ1-AdjKKfSnw&amp;s</string>
+    <string name="link_article_picture_link_description">Lombok picture</string>
+    <string name="switch_read">Прочитано</string>
+
+<!--    Общее-->
+    <string name="like_button_description">Кнопка "Лайк"</string>
+    <string name="dislike_button_description">Кнопка "Дизлайк"</string>
 </resources>

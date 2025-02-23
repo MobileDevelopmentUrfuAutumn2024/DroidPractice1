@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="40"
+    android:viewportHeight="40">
+
+    <!-- Красный фон -->
+    <path
+        android:fillColor="#FF0000"
+        android:pathData="M0,0h40v40h-40z" />
+
+    <!-- Белая буква H -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,10h4v20h-4zM24,10h4v20h-4zM16,18h8v4h-8z"/>
+</vector>

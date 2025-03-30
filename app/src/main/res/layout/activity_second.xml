@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".SecondActivity">
 
@@ -12,7 +12,52 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:title="@string/article_title"
-        android:navigationIcon="@drawable/arrow_back" />
+        android:navigationIcon="@drawable/arrow_back"
+        android:title="@string/article_two_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16.dp"
+            android:paddingVertical="16.dp">
+
+            <TextView
+                android:id="@+id/part_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="1"
+                android:paddingBottom="16.dp"
+                android:text="@string/article_two_part_one"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                tools:text="@string/article_two_part_one" />
+
+            <ImageView
+                android:id="@+id/multidirImage"
+                android:layout_width="match_parent"
+                android:layout_height="214dp"
+                android:src="@drawable/multidirshadow" />
+
+            <TextView
+                android:id="@+id/part_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="1"
+                android:paddingTop="16.dp"
+                android:text="@string/article_two_part_two"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                tools:text="@string/article_two_part_two" />
+
+            <Switch
+                android:id="@+id/read"
+                android:layout_width="wrap_content"
+                android:layout_height="48.dp"
+                android:text="Прочитано"/>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">DroidPractice1</string>
     <string name="article_title">Статья</string>
+    <string name="is_read">Прочитано:</string>
+
+    <string name="s1_title">Lorem ipsum odor amet</string>
+    <string name="s1_1">Lorem ipsum odor amet, consectetuer adipiscing elit. Ultrices arcu fringilla dapibus et ligula sem. Sagittis nec dictum odio, ante quis sodales. Pulvinar in consequat purus nibh mauris. Nisl auctor ut nec sociosqu aenean augue rhoncus. Amet lorem vitae quisque; tempus placerat pulvinar. Morbi donec nisi curae mollis ante risus. Nulla posuere venenatis sit tincidunt adipiscing inceptos justo. Cras at aliquam penatibus sagittis penatibus nostra. Sodales fames phasellus conubia inceptos rutrum nulla magna. Litora sodales vivamus orci, velit laoreet eleifend.</string>
+    <string name="s1_2">Etiam arcu egestas massa nunc lacinia morbi volutpat facilisi. In urna pulvinar ut massa erat penatibus. Fringilla ante vitae taciti tincidunt facilisis metus vulputate montes. Leo vestibulum senectus rhoncus phasellus leo suscipit mauris nunc.</string>
+    <string name="s1_3">Arcu purus tellus sollicitudin phasellus fringilla tristique curabitur?</string>
+    <string name="s2_title">Lorem ipsum odor amet</string>
+    <string name="s2_1">Arcu purus tellus sollicitudin phasellus fringilla tristique curabitur? Cras eget congue felis eros dapibus conubia conubia euismod enim. Massa odio augue fringilla imperdiet; congue libero. Accumsan hac sapien leo; nisi netus ex vel odio. Eget class maximus malesuada aenean auctor sit. Tellus consequat mattis mauris ridiculus ridiculus euismod enim. Etiam ornare diam pharetra nullam fusce facilisis. Aeget amet consequat habitant aptent nascetur?</string>
+    <string name="s2_2">Ultricies aptent curabitur nibh accumsan ut. Curae consectetur vulputate sollicitudin sit quam enim ante netus vivamus. Aliquam erat finibus potenti iaculis rutrum nullam ut montes. Egestas tempus euismod proin eros risus vivamus. Duis natoque habitasse euismod neque mus leo. Inceptos interdum scelerisque quis per adipiscing ex aptent sed.</string>
+    <string name="s2_3">Netus justo sed libero tortor quam maximus mi habitasse. Rhoncus quis curae interdum interdum sodales accumsan metus. Nullam risus turpis accumsan condimentum sociosqu adipiscing facilisis? Felis cras sagittis vel sollicitudin senectus iaculis. Habitant pretium ornare nisi tellus senectus lectus. Aliquet suspendisse accumsan pellentesque elementum cubilia. Semper cubilia habitasse litora tempor ullamcorper molestie phasellus varius sollicitudin.</string>
 </resources>

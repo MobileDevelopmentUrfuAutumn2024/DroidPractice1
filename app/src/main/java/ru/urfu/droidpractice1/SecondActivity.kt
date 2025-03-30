@@ -1,12 +1,23 @@
 package ru.urfu.droidpractice1
 
+import android.content.Intent
 import androidx.activity.ComponentActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.ImageView
+import androidx.activity.addCallback
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import com.bumptech.glide.Glide
+import ru.urfu.droidpractice1.MainActivity.Companion.IS_READ
 import ru.urfu.droidpractice1.databinding.ActivitySecondBinding
 
 class SecondActivity : ComponentActivity() {
 
     private lateinit var binding: ActivitySecondBinding
+
+    private var read by mutableStateOf(false)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,6 +25,70 @@ class SecondActivity : ComponentActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.toolbar.setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
+        Log.d("SecondActivity", "inside onCreate")
+
+//        binding.toolbar.setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
+//
+//        binding.switchRead.setOnCheckedChangeListener { _, isChecked -> read = isChecked }
+
+        binding.apply {
+            toolbar.setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
+            read = intent.getBooleanExtra(IS_READ, false)
+            switchRead.isChecked = read
+            switchRead.setOnCheckedChangeListener { _, isChecked -> read = isChecked }
+        }
+
+        onBackPressedDispatcher.addCallback(this) {
+            setResult(RESULT_OK, Intent().apply { putExtra(KEY_READ, read) })
+            finish()
+        }
+
+
+    }
+
+    override fun onStart() {
+        Log.d("SecondActivity", "inside onStart")
+        super.onStart()
+    }
+
+    override fun onRestart() {
+        Log.d("SecondActivity", "inside onRestart")
+        super.onRestart()
+    }
+
+    override fun onResume() {
+        Log.d("SecondActivity", "inside onResume")
+        super.onResume()
+    }
+
+    override fun onPause() {
+        Log.d("SecondActivity", "inside onPause")
+        super.onPause()
+    }
+
+    override fun onStop() {
+        Log.d("SecondActivity", "inside onStop")
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        Log.d("SecondActivity", "inside onDestroy")
+        super.onDestroy()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putBoolean(IS_READ, read)
+        Log.d("SecondActivity", "inside onSaveInstanceState")
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        read = savedInstanceState.getBoolean(IS_READ)
+        Log.d("SecondActivity", "inside onRestoreInstanceState")
+    }
+
+    companion object {
+        const val KEY_READ = "READ"
     }
 }

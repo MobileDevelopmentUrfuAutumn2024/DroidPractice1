@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -15,4 +18,108 @@
         android:title="@string/article_title"
         android:navigationIcon="@drawable/arrow_back" />
 
+
+    <TextView
+        android:id="@+id/news_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Новые фигурки Funko One Piece Luffy и Zoro"
+        android:textSize="16sp"
+        android:lineSpacingExtra="8dp"
+        android:textColor="#333333"
+        android:padding="16dp" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:orientation="horizontal">
+
+        <!-- Первая строка -->
+        <ImageView
+            android:id="@+id/news_image_1"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_gravity="center"
+            android:background="@drawable/image_border"
+            android:scaleType="centerCrop"
+            android:layout_margin="4dp" />
+
+        <ImageView
+            android:id="@+id/news_image_2"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_gravity="center"
+            android:background="@drawable/image_border"
+            android:scaleType="centerCrop"
+            android:layout_margin="4dp" />
+
+        <!-- Вторая строка -->
+        <ImageView
+            android:id="@+id/news_image_3"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_gravity="center"
+            android:background="@drawable/image_border"
+            android:scaleType="centerCrop"
+            android:layout_margin="4dp" />
+
+        <ImageView
+            android:id="@+id/news_image_4"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_gravity="center"
+            android:background="@drawable/image_border"
+            android:scaleType="centerCrop"
+            android:layout_margin="4dp" />
+
+    </GridLayout>
+
+
+    <Button
+        android:id="@+id/card_button"
+        style="@style/CustomButtonStyle"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        android:background="@drawable/card_background"
+        android:padding="16dp"
+        android:text="Узнать дату выхода"
+        android:textSize="16sp"
+        android:lineSpacingExtra="8dp"
+        android:textColor="#673AB7" />
+
+
+    <TextView
+        android:id="@+id/featured_figure_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Информация о фигурках Луффи и Зоро"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FF0000"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Обе фигурки, как и остальная часть этой коллекции, будут продаваться по 25 долларов каждая и будут доступны в течение ограниченного времени."
+        android:textSize="16sp"
+        android:lineSpacingExtra="8dp"
+        android:textColor="#333333"
+        android:padding="16dp" />
+
+
+    <Switch
+        android:id="@+id/switch_read"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Прочитано"
+        android:layout_marginTop="16dp"/>
+
 </LinearLayout>
+</ScrollView>

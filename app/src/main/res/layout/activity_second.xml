@@ -3,16 +3,51 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:visibility="visible"
     tools:context=".SecondActivity">
 
     <Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:title="@string/article_title"
-        android:navigationIcon="@drawable/arrow_back" />
+        android:navigationIcon="@drawable/arrow_back"
+        android:title="@string/article_title" />
 
+    <ScrollView
+        android:id="@+id/secondScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            tools:ignore="UseSwitchCompatOrMaterialXml">
+
+            <TextView
+                style="@style/TextAppearance.M3.Sys.Typescale.TitleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Рецепт шоколадных блинчиков от кота Кокоса"
+                android:textSize="25sp" />
+            <TextView
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Кот кокос не умеет готовить шоколадные блинчики, по-этому нет никакого рецепта"
+                android:textSize="20sp"
+                android:layout_marginTop="15dp"/>
+            <Switch
+                android:id = "@+id/switchRead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Прочитано"
+                android:layout_marginTop="15dp"/>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

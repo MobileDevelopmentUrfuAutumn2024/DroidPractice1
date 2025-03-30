@@ -12,7 +12,52 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:title="@string/article_title"
-        android:navigationIcon="@drawable/arrow_back" />
+        android:navigationIcon="@drawable/arrow_back"
+        android:title="@string/article_title" />
+
+    <ScrollView
+        android:id="@+id/secondScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/TextAppearance.Material3.DisplaySmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/titleViewSecond" />
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="241dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/webp" />
+
+            <TextView
+                android:id="@+id/textFirst"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/textFirst" />
+
+            <Switch
+                android:id="@+id/switchRead"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/switchRead"
+                tools:ignore="UseSwitchCompatOrMaterialXml"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

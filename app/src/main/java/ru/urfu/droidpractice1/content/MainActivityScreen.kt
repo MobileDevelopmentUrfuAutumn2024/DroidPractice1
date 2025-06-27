@@ -101,7 +101,15 @@ fun MainActivityScreen() {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-
+            AsyncImage(
+                model = "https://img.championat.com/s/732x488/news/big/u/r/subaru-vozrodila-kultovuyu-model_1656006188192079084.jpg",
+                contentDescription = null,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 16.dp)
+                    .clip(MaterialTheme.shapes.medium),
+                contentScale = ContentScale.Crop
+            )
 
             Spacer(modifier = Modifier.height(16.dp))
 
@@ -130,7 +138,7 @@ fun MainActivityScreen() {
 
 
             AsyncImage(
-                model = "https://img.championat.com/s/732x488/news/big/l/s/kak-getzhi-stal-samym-yarkim-bojcom-lyogkogo-vesa_17410047411063813390.jpg",
+                model = "https://img.championat.com/i/q/s/16560059142051583648.jpg",
                 contentDescription = null,
                 modifier = Modifier
                     .fillMaxWidth()

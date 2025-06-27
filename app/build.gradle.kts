@@ -65,5 +65,5 @@ dependencies {
     implementation (libs.glide)
     implementation(libs.coil.compose)
     implementation(libs.coil.kt.coil.compose)
-    
+    implementation(libs.coil.network.okhttp)
 }

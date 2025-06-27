@@ -28,6 +28,7 @@ class SecondActivity : ComponentActivity() {
             .override(1080, 720)
             .into(binding.secondArticleIMG1)
 
+
         Glide.with(binding.secondArticleIMG2)
             .asBitmap()
             .load("https://img.championat.com/i/b/h/16667999191906934541.jpg")
@@ -36,14 +37,14 @@ class SecondActivity : ComponentActivity() {
 
         readSwitch = findViewById(R.id.readSwitch)
         val sharedPreferences = getSharedPreferences("sharedPreferences", MODE_PRIVATE)
-        readSwitch.isChecked = sharedPreferences.getBoolean("isRead", false)
+        readSwitch.isChecked = sharedPreferences.getBoolean("isSecondArticleRead", false)
         readSwitch.setOnCheckedChangeListener { _, isChecked ->
-            sharedPreferences.edit().putBoolean("isRead", isChecked).apply()
+            sharedPreferences.edit().putBoolean("isSecondArticleRead", isChecked).apply()
         }
 
         onBackPressedDispatcher.addCallback(this) {
             val resultIntent = Intent().apply {
-                putExtra("isRead", readSwitch.isChecked)
+                putExtra("isSecondArticleRead", readSwitch.isChecked)
             }
             setResult(RESULT_OK, resultIntent)
             finish()

@@ -8,8 +8,10 @@ import android.content.Context
 import android.content.Intent
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -33,6 +35,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -61,6 +64,8 @@ fun MainActivityScreen() {
     }
     var isSecondArticleRead by remember { mutableStateOf(sharedPreferences.getBoolean("isSecondArticleRead", false)) }
 
+    var likesCount by remember { mutableStateOf(sharedPreferences.getInt("likesCount", 0)) }
+    var dislikesCount by remember { mutableStateOf(sharedPreferences.getInt("dislikesCount", 0)) }
 
     val resultLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.StartActivityForResult()
@@ -151,6 +156,28 @@ fun MainActivityScreen() {
                 modifier = Modifier.padding(top = 8.dp)
             )
 
+            Spacer(modifier = Modifier.height(24.dp))
+
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Button(onClick = {
+                    likesCount += 1
+                    sharedPreferences.edit().putInt("likesCount", likesCount).apply()
+                }) {
+                    Text("👍 $likesCount")
+                }
+
+                Button(onClick = {
+                    dislikesCount += 1
+                    sharedPreferences.edit().putInt("dislikesCount", dislikesCount).apply()
+                }) {
+                    Text("👎 $dislikesCount")
+                }
+            }
+
             Button(
                 onClick = {
                     val intent = Intent(Intent.ACTION_SEND).apply {
@@ -183,7 +210,6 @@ fun MainActivityScreen() {
 
     }
 }
-
 
 
 

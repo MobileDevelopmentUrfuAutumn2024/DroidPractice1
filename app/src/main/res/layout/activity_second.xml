@@ -12,7 +12,124 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:title="@string/article_title"
-        android:navigationIcon="@drawable/arrow_back" />
+        android:navigationIcon="@drawable/arrow_back"
+        android:title="@string/article_title" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/second_article_heading"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/secondArticleIMG1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Фото машины"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Легендарный Кен Блок и его «джимхана» снова в деле!"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/second_article_t1"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:textAlignment="textStart"
+                android:textStyle="normal"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Возрождение «джимханы» — теперь электро и с Audi"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/second_article_t2"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:textAlignment="textStart"
+                android:textStyle="normal"
+                android:layout_marginTop="10dp"/>
+
+            <ImageView
+                android:id="@+id/secondArticleIMG2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Кен Блок"
+                android:layout_marginTop="20dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Кен Блок"
+                android:layout_marginTop="5dp"
+                android:textAlignment="textEnd"
+                android:layout_marginEnd="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/second_article_t3"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:textAlignment="textStart"
+                android:textStyle="normal"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/second_article_t4"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:textAlignment="textStart"
+                android:textStyle="normal"
+                android:layout_marginTop="10dp"/>
+
+            <Switch
+                android:id="@+id/readSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/read"
+                android:switchPadding="16dp"
+                android:layoutDirection="ltr"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="20dp"/>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
 
 </LinearLayout>
